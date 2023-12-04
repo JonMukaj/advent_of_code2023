@@ -40,7 +40,8 @@ def num_of_cards(cards):
                 if num in winning_numbers:
                     count += 1
                     right_numbers.append(num)
-            card_instances = {key: value + 1 if key > k and key <= k + count else value for key, value in card_instances.items()}
+            for c in range(k + 1, k + count + 1):
+                card_instances[c] += 1
         k += 1
     return sum(card_instances.values())
 
